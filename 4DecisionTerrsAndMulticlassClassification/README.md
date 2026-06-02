@@ -51,28 +51,6 @@ of supervised learners. Decision trees take a vector of attribute values as inpu
 
 <p> <img src="./files/dt.png" alt="Decision Trees" width="700" height="350"/>
 
-## Submission and Due Date
-
-The deliverable for the assignment is to upload a completed **_submission.py_** to Gradescope.
-
-* All functions must be completed in **_submission.py_** for full credit
-
-**Important**:
-Submissions to Gradescope are rate limited for this assignment. **You can submit two submissions every 60 minutes during the duration of the assignment**.
-
-Since we want to see you innovate and imagine new ways to do this, we know this can also cause you to fail 
-(spectacularly in my case) For that reason you will be able to select your strongest submission to Gradescope. 
-In your Gradescope submission history, you will be able to mark your best submission as 'Active'. 
-This is a students responsibility and not faculty.
-
-### The Files
-
-You are only required to edit and submit **_submission.py_**, but there are a number of important files:
-1. **_submission.py_**: Where you will build your decision tree, confusion matrix, performance metrics, forests, and do the vectorization warm up.
-2. **_decision_trees_submission_tests.py_**: Sample tests to validate your trees, learning, and vectorization locally.
-3. **_visualize_tree.ipnb_**: Helper Notebook to help you understand decision trees of various sizes and complexity
-4. **_unit_testing.ipynb_**: Helper Notebook to run through tests sequentially along with the readme
-
 ### Resources
 * Canvas *Thad's Videos*: [Lesson 7, Machine Learning](https://gatech.instructure.com/courses/336814/pages/7-machine-learning?module_item_id=3369476)
 * Textbook:Artificial Intelligence Modern Approach (3rd Ed. Chapters may have changed for 4th Ed.)
@@ -117,7 +95,6 @@ Out[4]: 0.123457
 ---
 
 ### Part 0: Vectorization!
-_[10 pts]_
 
 * File to use to benchmark tests: **_vectorize.csv_**
 
@@ -211,7 +188,6 @@ An object of type 'DecisionNode' can represent a
 ---
 ### Part 1: Building a Binary Tree by Hand
 #### Part 1a: Build a Tree
-_[10 Pts]_
 
 In `build_decision_tree()`, construct a decision tree capable of predicting the class (col y) of each example. 
 Using the columns A0-A3 build the decision tree and nodes in python to classify the data with 100% accuracy. 
@@ -274,7 +250,6 @@ return decision_tree_root
 ---
 
 ##### Part 1b: Precision, Recall, Accuracy and Confusion Matrix
-_[12 pts]_
 
 To build the Starner Zapper next-gen, we will need to keep the high levels of Precision, Recall, and Accuracy
 inculcated in the legacy products. In binary/boolean classification we find these metrics in terms of true positives, 
@@ -335,7 +310,6 @@ If you want to calculate the example set above by hand, run the following code.
 
 ### Part 2: Decision Tree Learning
 #### Part 2a: Gini
-_[10 pts]_
 
 Purity, we strive for purity, alike Sir Galahad the Pure... 
 Splitting at a decision is all about purity. You are trying to improve information gain which means,
@@ -361,14 +335,7 @@ Hints:
 ---
 
 #### Part 2b: Decision Tree Learning
-_[25 pts]_
 * Data to train and test with: **_simple_binary.csv, simple_multi.csv, mod_complex_binary.csv, mod_complex_multi.csv_**
-
-* Grading:
-    * 15 pts: average test accuracy over 10 rounds should be >= 50%
-    * 20 pts: average test accuracy over 10 rounds should be >= 60%
-    * 25 pts: average test accuracy over 10 rounds should be >= 75%
-</br>
 
 Meanwhile back in the lab...
 As the size of our flying training set grows, it rapidly becomes impractical to build multiclass trees by hand. 
@@ -411,7 +378,7 @@ How grading works:
 ---
 
 #### Part 2c: Validation
-_[7 pts]_
+
 
 * File to use: **_part23_data.csv_**
 * Allowed use of numpy, collections.Counter, and math.log
@@ -427,16 +394,9 @@ should give us a more consistent idea of how the classifier is doing across the 
 For those who are not familiar with k folds cross-validation, please refer the tutorial here:
 [A Gentle Introduction to k-fold Cross-Validation](https://machinelearningmastery.com/k-fold-cross-validation/).
 
-How grading works:
-1. The same as 2b however, we use your `generate_k_folds()` instead of ours.
-
-#### Functions to complete in the `submission` module:
-1. `generate_k_folds()`
-
----
 
 ### Part 3: Random Forests
-_[25 pts]_
+
 
 * File to use: **_mod_complex_binary.csv, mod_complex_multi.csv_**
 * Allowed use of numpy, collections.Counter, and math.log
@@ -536,21 +496,6 @@ classify examples. Use your decision tree implementation as your classifier or c
 Your features and classify should use numpy arrays datasets of (_m_ x _n_) features of (_m_ x _n_-1) and 
 classes of (_m_ x _1_).
 
-How grading works:
-To test, we will be running 10 rounds, using your boosting with 200 trees, with a depth limit of 3, 
-example subsample rate of 0.1 and attribute subsample rate of 0.2. You will have a time limit.
-
-#### Functions to complete in the `ChallengeClassifier` class:
-1. `init()`
-2. `fit()`
-3. `classify()`
-
----
-### Part 5: Return Your name!
-_[1 pts]_
-Return your name from the function `return_your_name()`
-
----
 
 ### Helper Notebook
 
