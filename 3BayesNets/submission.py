@@ -447,9 +447,3 @@ def sampling_question():
     options = ["Gibbs", "Metropolis-Hastings"]
     factor = 1
     return options[choice], factor
-
-
-def return_your_name():
-    """Return your name from this function"""
-    # TODO: finish this function͏󠄂͏️͏󠄌͏󠄎͏︀͏︄͏󠄉
-    return "Jing Li"
