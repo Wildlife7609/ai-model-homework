@@ -3,7 +3,6 @@
 Search is an integral part of AI. It helps in problem solving across a wide variety of domains where a solution isn’t immediately clear. Your task is to implement several search algorithms that will calculate a route between two points in Romania while seeking to minimize time and space cost. We will be using an undirected network representing a map of Romania (and an optional Atlanta graph used for the Race!).
 
 ### Table of Contents
-- [Get Repository](#repo)
 - [Setup](#setup)
 - [Jupyter](#jupyter)
 - [Jupyter Tips](#jupyter-tips)
