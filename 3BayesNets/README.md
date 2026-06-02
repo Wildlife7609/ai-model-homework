@@ -1,4 +1,4 @@
-## CS 6601 Assignment 3: Bayes Nets
+## Bayes Nets
 
 In this assignment, you will work with probabilistic models known as Bayesian networks to efficiently calculate the answer to probability questions concerning discrete random variables.
 
@@ -24,61 +24,13 @@ Chapter 14: Probabilistic Reasoning  <br>
 [Gibbs Sampling](http://gandalf.psych.umn.edu/users/schrater/schrater_lab/courses/AI2/gibbs.pdf)  
 [Metropolis Hastings Sampling - 1](https://github.gatech.edu/omscs6601/assignment_3/blob/master/resources/mh%20sampling.pdf)  
 
-
-### Setup
-
-1. Clone the project repository from Github
-
-   ```
-   git clone https://github.gatech.edu/6601Spr24/a3_<gt_github_username>.git
-   ```
-
-Substitute your actual username where the angle brackets are.
-
-2. Navigate to `assignment_3/` directory
-
-3. Activate the environment you created during Assignment 0 
-
-    ```
-    conda activate ai_env
-    ```
-    
-    In case you used a different environment name, to list of all environments you have on your machine you can run `conda env list`.
-
-4. Run the following command in the command line to install and update the required packages
-
-    ```
-    pip install torch torchvision -f https://download.pytorch.org/whl/torch_stable.html
-    pip install --upgrade -r requirements.txt
-    ```
-
-### Submission
-
-Please include all of your own code for submission in `submission.py`.  
-
-**Important: There is a TOTAL submission limit of 5 on Gradescope for this assignment. This means you can submit a maximum of 5 times during the duration of the assignment. Please use your submissions carefully and do not submit until you have thoroughly tested your code locally.**
-
-**If you're at 4 submissions, use your fifth and last submission wisely. The submission marked as ‘Active’ in Gradescope will be the submission counted towards your grade.**
-
-### Restrictions
-
-You are not allowed to use following set of modules from 'pgmpy' Library.
-
->- pgmpy.sampling.*
->- pgmpy.factor.*
->- pgmpy.estimators.*
-
 ## Part 1 Bayesian network tutorial:
-
-_[35 points total]_
 
 To start, design a basic probabilistic model for the following system:
 
 James Bond, Q (Quartermaster), and M (Head of MI6) are in charge of the security system at MI6, the Military Intelligence Unit of the British Secret Service. MI6 runs a special program called “Double-0”, where secret spy agents are trained and deployed to gather information concerning national security. A terrorist organization named “Spectre” is planning an espionage mission and its aim is to gain access to the secret “Double-0” files stored in the MI6 database. Q has designed a special security system to protect the secret “Double-0” files. In order to gain access to these files, Spectre needs to steal from MI6 a cipher and the key to crack this cipher. Q stores this cipher in his personal database, which is guarded by heavy security protocols. The key to cracking the cipher is known only to M, who is protected by Bond. 
 
 ### 1a: Casting the net
-
-_[10 points]_
 
 Thus, Spectre can carry out their mission by performing the following steps:
 >- Hire professional hackers who can write programs to launch a cyberattack on Q’s personal database.
@@ -219,8 +171,6 @@ If you need to sanity-check to make sure you're doing inference correctly, you c
 
 ## Part 2: Sampling
 
-_[65 points total]_
-
 For the main exercise, consider the following scenario.
 
 There are three frisbee teams who play each other: the Airheads, the Buffoons, and the Clods (A, B and C for short). 
@@ -288,7 +238,6 @@ python probability_tests.py ProbabilityTests.test_games_network
 
 ### 2b: Calculate posterior distribution for the 3rd match.
 
-_[5 points]_
 
 Suppose that you know the following outcome of two of the three games: A beats B and A draws with C. Calculate the posterior distribution for the outcome of the **BvC** match in `calculate_posterior()`. 
 
@@ -323,7 +272,6 @@ You can access these by calling:
 
 
 ### 2c: Gibbs sampling
-_[15 points]_
 
 Implement the Gibbs sampling algorithm, which is a special case of Metropolis-Hastings. You'll do this in `Gibbs_sampler()`, which takes a Bayesian network and initial state value as a parameter and returns a sample state drawn from the network's distribution. In case of Gibbs, the returned state differs from the input state at at-most one variable (randomly chosen).
 
@@ -340,7 +288,6 @@ You may find [this](http://gandalf.psych.umn.edu/users/schrater/schrater_lab/cou
 
 ### 2d: Metropolis-Hastings sampling
 
-_[15 points]_
 
 Now you will implement the independent Metropolis-Hastings sampling algorithm in `MH_sampler()`, which is another method for estimating a probability distribution.
 The general idea of MH is to build an approximation of a latent probability distribution by repeatedly generating a "candidate" value for each sample vector comprising of the random variables in the system, and then probabilistically accepting or rejecting the candidate value based on an underlying acceptance function. Unlike Gibbs, in case of MH, the returned state can differ from the initial state at more than one variable.
@@ -355,7 +302,6 @@ Note: **DO NOT USE the given inference engines to run the sampling method**, sin
 
 ### 2e: Comparing sampling methods
 
-_[19 points]_
 
 Now we are ready for the moment of truth.
 
@@ -371,10 +317,3 @@ Repeat this experiment for Metropolis-Hastings sampling.
 Fill in the function `compare_sampling()` to perform your experiments
 
 Which algorithm converges more quickly? By approximately what factor? For instance, if Metropolis-Hastings takes twice as many iterations to converge as Gibbs sampling, you'd say that Gibbs converged faster by a factor of 2. Fill in `sampling_question()` to answer both parts.
- 
-### 2f: Return your name
-
-_[1 point]_
-
-A simple task to wind down the assignment. Return your name from the function aptly called `return_your_name()`.
-~~~~~~~~
